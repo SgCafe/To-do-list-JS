@@ -16,7 +16,25 @@ const saveTodo = (text) => {
   todoTitle.innerText = text;
   todo.appendChild(todoTitle);
 
-  console.log(todo);
+  const doneBtn = document.createElement("button");
+  doneBtn.classList.add("finish-todo");
+  doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+  todo.appendChild(doneBtn);
+
+  const editBtn = document.createElement("button");
+  editBtn.classList.add("edit-todo");
+  editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+  todo.append(editBtn);
+
+  const removeBtn = document.createElement("button");
+  removeBtn.classList.add("remove-todo");
+  removeBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  todo.appendChild(removeBtn);
+
+  todoList.appendChild(todo);
+
+  todoInput.value = "";
+  todoInput.focus();
 };
 
 //Eventos
